@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "dio_live_api - Cognito",
+    "description": "Coleção do desafio DIO: API protegida por Amazon Cognito. Preencha as variáveis baseUrl e idToken.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "https://SEU_API_ID.execute-api.sa-east-1.amazonaws.com/dev" },
+    { "key": "idToken", "value": "COLE_AQUI_O_ID_TOKEN" }
+  ],
+  "item": [
+    {
+      "name": "POST /Itens (SEM token) - esperado 401",
+      "request": {
+        "method": "POST",
+        "auth": { "type": "noauth" },
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"id\": \"003\",\n  \"price\": 600\n}" },
+        "url": { "raw": "{{baseUrl}}/Itens", "host": ["{{baseUrl}}"], "path": ["Itens"] }
+      }
+    },
+    {
+      "name": "POST /Itens (COM token) - esperado 200",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [{ "key": "token", "value": "{{idToken}}", "type": "string" }]
+        },
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"id\": \"003\",\n  \"price\": 600\n}" },
+        "url": { "raw": "{{baseUrl}}/Itens", "host": ["{{baseUrl}}"], "path": ["Itens"] }
+      }
+    }
+  ]
+}

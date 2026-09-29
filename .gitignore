@@ -1,0 +1,15 @@
+# Artefatos gerados pela automação
+build/
+*.zip
+
+# Segredos e ambiente
+.env
+*.pem
+*.key
+
+# Node / SO / editor
+node_modules/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
