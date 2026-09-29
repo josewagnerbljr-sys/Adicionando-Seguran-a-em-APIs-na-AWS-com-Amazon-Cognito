@@ -162,3 +162,6 @@ Grupos do Cognito para autorização por perfil (admin/usuário), escopos person
 
 ## Autor
 **José Wagner Blanco Júnior**: [github.com/josewagnerbljr-sys](https://github.com/josewagnerbljr-sys)
+
+## Status
+Código e automação publicados. A validação na AWS (deploy, prints do 401/200 no Postman e do item no DynamoDB) será adicionada assim que a verificação da conta for concluída.
